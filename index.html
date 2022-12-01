@@ -8,13 +8,21 @@
     <title>To do list</title>
 </head>
 <body>
-    
-    <button onclick="fetchTodos()">Fetch Todos</button>
-    <button onclick="logTodos()">Log Todos</button>
-    <button onclick="populateTodos()">Populate Todos</button>
-    <ol id="todo-list">
-    <!-- LIs will go here -->
-    </ol>
+    <form method="post">
+        <label for="userID">Search for UserId:</label>
+        <input type="number" id="userID" min="1" max="10">
+        <input type="submit" id="userID">
+        <br>
+        <button onclick="fetchTodos()">Fetch Todos</button>
+        <br>
+        <button onclick="logTodos()">Log Todos</button>
+        <br>
+        <button onclick="populateTodos()">Populate Todos</button>
+        <br>
+        <ol id="todo-list">
+        <!-- LIs will go here -->
+        </ol>
+    </form>
     <script src="scripts.js"></script>
 </body>
 </html>

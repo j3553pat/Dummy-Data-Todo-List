@@ -22,9 +22,21 @@ const logTodos = () => {
     console.log(arrayOfTodos)
 }
 
+const toDos = document.getElementById('todo-list')
+
+
+const filtered =  toDos.filter((arrayOfTodos) => {
+    for (let i = 0; i < arrayOfTodos.length; i++) {
+        return arrayOfTodos[i].userId
+ }
+
+})
+console.log(filtered)
+
+
 const populateTodos = () => {
     for (let i = 0; i < arrayOfTodos.length; i++) {
-    const toDos = document.getElementById('todo-list')
+
     const li = document.createElement('li')
     const textNode = document.createTextNode(arrayOfTodos)
     toDos.appendChild(li)
