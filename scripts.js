@@ -24,24 +24,18 @@ const logTodos = () => {
 
 const toDos = document.getElementById('todo-list')
 
-
-const filtered =  toDos.filter((arrayOfTodos) => {
-    for (let i = 0; i < arrayOfTodos.length; i++) {
-        return arrayOfTodos[i].userId
- }
-
-})
-console.log(filtered)
-
-
 const populateTodos = () => {
     for (let i = 0; i < arrayOfTodos.length; i++) {
-
     const li = document.createElement('li')
     const textNode = document.createTextNode(arrayOfTodos)
     toDos.appendChild(li)
     li.innerHTML = arrayOfTodos[i].title
     }
-  
 }
 
+const form = document.querySelector("form")
+form.addEventListener("submit",e => {
+    e.preventDefault();
+    toDos.innerHTML = ""
+    
+})
