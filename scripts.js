@@ -36,6 +36,43 @@ const populateTodos = () => {
 const form = document.querySelector("form")
 form.addEventListener("submit",e => {
     e.preventDefault();
-    toDos.innerHTML = ""
+
+const id = document.getElementById("userID").value
+console.log(id)
+const foundId = arrayOfTodos.filter((el)=> {
+    console.log(el.userId, Number(id))
+    return el.userId === Number(id)
+})
+console.log(foundId)
+toDos.innerHTML = ''
+    foundId.forEach((el) => {
+        const li = document.createElement('li')
+
+        li.innerHTML = `
+            <p>userId: ${el.userId}</p>
+            <p>todo: ${el.title}</p>
+        `
+        toDos.appendChild(li)
+    })
     
 })
+
+const clearTodos = () => {
+    toDos.innerHTML =''
+}
+
+const completed = () => {
+    const completedTodos = arrayOfTodos.filter((el) => {
+        return el.completed == true
+    })
+    console.log(completedTodos)
+    completedTodos.forEach((el) => {
+        const li = document.createElement('li')
+
+        li.innerHTML = `
+            <p>userId: ${el.userId}</p>
+            <p>todo: ${el.title}</p>
+        `
+        toDos.appendChild(li)
+    })
+}
